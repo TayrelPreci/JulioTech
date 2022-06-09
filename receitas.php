@@ -1,6 +1,6 @@
 <?php
 // variaveis de controle
-$paginaAtual = 'Produtos';
+$paginaAtual = 'Receitas';
 
 include_once './includes/functions.php';
 include_once './includes/_dados.php'; #inclui arquivo de dados
@@ -9,18 +9,17 @@ include_once './includes/_header.php'; #inclui o header da pagina
 // conteudo da pagina
 ?>
 
-    <section id="produtos">
+    <section id="receitas">
         <div class="row">
     <?php
     // laco de repeticao 
-    foreach ($dadosProdutos as $key => $value) {
+    foreach ($dadosReceitas as $key => $value) {
     ?>
         <div class="card col-3" style="width: 18rem;">
-            <a href="./produto-detalhe.php?id=<?php echo $key;?>">
-                <img class="card-img-top" src="./produtos/<?php echo $value['imagem']?>" alt="<?php echo $value['nome'];?>">
+            <a href="./receita-detalhe.php?id=<?php echo $key;?>">
+                <img class="card-img-top" src="./receitas/<?php echo $value['imagem']?>" alt="<?php echo $value['titulo'];?>">
                 <div class="card-body">
-                    <h4 class="card-title"><?php echo $value['nome']?></h4>
-                    <span class="card-price"><?php echo ConverterEmMoeda($value['preco'],2,",",".");?></span>
+                    <h4 class="card-title"><?php echo $value['titulo']?></h4>
                 </div>
             </a>
         </div>

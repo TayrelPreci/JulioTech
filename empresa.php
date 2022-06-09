@@ -1,20 +1,16 @@
-<?php 
+<?php
+// variaveis de controle
+$paginaAtual = 'Empresa';
 
-$paginaAtual = 'empresa';
 
-    //incluir dados
-    include_once './includes/_dados.php' ; 
-    //incluir hader
-    include_once './includes/_header.php';
-    //inclui o header
-    include_once './includes/_head.php' ;
+include_once './includes/_dados.php'; #inclui arquivo de dados
+include_once './includes/_head.php'; #inclui o arquivo com o head em html
+include_once './includes/_header.php'; #inclui o header da pagina
+// conteudo da pagina
 ?>
 
+    <h1>empresa</h1>
 
-<h1>Empresa</h1>
-
-
-<?php 
-    //incluir footer 
-    include_once './includes/_footer.php';
+<?php
+include_once './includes/_footer.php'; #inclui o footer da pagina
 ?>

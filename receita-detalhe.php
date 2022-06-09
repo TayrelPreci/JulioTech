@@ -1,23 +1,23 @@
 <?php
 // variaveis de controle
-$paginaAtual = 'Produto Detalhe';
+$paginaAtual = 'Receita Detalhe';
 include_once './includes/functions.php';
 include_once './includes/_dados.php'; #inclui arquivo de dados
 include_once './includes/_head.php'; #inclui o arquivo com o head em html
 include_once './includes/_header.php'; #inclui o header da pagina
 // conteudo da pagina
 $id = $_GET['id'];
-$produto = $dadosProdutos[$id];
+$receita = $dadosReceitas[$id];
 ?>
 
-    <h1><?php echo $produto['nome'];?></h1>
+    <h1><?php echo $receita['titulo'];?></h1>
     <hr>
-    <p><?php echo $produto['descricao'];?></p>
-    <img src="./produtos/<?php echo $produto['imagem']; ?>" >
+    <p><?php echo $receita['descrição'];?></p>
+    <img src="./receitas/<?php echo $receita['imagem']; ?>" >
     <hr>
-    <span><?php echo ConverterEmMoeda($produto['preco']);?></span>
+    <?php echo $receita['video']?>
     <span>
-        <a href="./produtos.php">Voltar</a>
+        <a href="./receitas.php">Voltar</a>
     </span>
 
 <?php
