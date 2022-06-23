@@ -8,7 +8,7 @@ include_once './includes/_head.php'; #inclui o arquivo com o head em html
 include_once './includes/_header.php'; #inclui o header da pagina
 // conteudo da pagina
 
-$sql = mysqli_query($conn,"SELECT * FROM categorias") or die("Erro");
+$sql = mysqli_query($conn,"SELECT * FROM produtos") or die("Erro");
 
 ?>
 
@@ -16,14 +16,14 @@ $sql = mysqli_query($conn,"SELECT * FROM categorias") or die("Erro");
         <div class="row">
     <?php
     // laco de repeticao 
-    foreach ($dados as $key => $value) {
+    while( $dados = mysqli_fetch_assoc($sql)) {
     ?>
         <div class="card col-3" style="width: 18rem;">
-            <a href="./produto-detalhe.php?id=<?php echo $key;?>">
-                <img class="card-img-top" src="./produtos/<?php echo $dados['imagem']?>" alt="<?php echo $dados['nome'];?>">
+            <a href="./produto-detalhe.php?id=<?php echo $dados['ProdutoID'];?>">
+                <img class="card-img-top" src="./produtos/<?php echo $dados['Imagem']?>" alt="<?php echo $dados['Nome'];?>">
                 <div class="card-body">
-                    <h4 class="card-title"><?php echo $dados['nome']?></h4>
-                    <span class="card-price"><?php echo ConverterEmMoeda($dados['preco'],2,",",".");?></span>
+                    <h4 class="card-title"><?php echo $dados['Nome']?></h4>
+                    <span class="card-price"><?php echo ConverterEmMoeda($dados['Preco'],2,",",".");?></span>
                 </div>
             </a>
         </div>
