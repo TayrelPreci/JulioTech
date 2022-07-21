@@ -1,16 +1,13 @@
-<?php
-
+<?php 
 $servername = "localhost";
 $database = "meusite";
 $username = "root";
 $password = "";
-// Criar a conexão
-
+// Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
-// Checar a conexão
-
+// Check connection
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    die("Erro ao conectar no Banco: " . mysqli_connect_error());
 }
 
 ?>

@@ -3,11 +3,11 @@
 $paginaAtual = 'Produtos';
 
 include_once './includes/functions.php';
+//include_once './includes/_dados.php'; #inclui arquivo de dados
 include_once './includes/_banco.php';
 include_once './includes/_head.php'; #inclui o arquivo com o head em html
 include_once './includes/_header.php'; #inclui o header da pagina
-// conteudo da pagina
-
+// Executar comando SQL = linguagem de banco de dados
 $sql = mysqli_query($conn,"SELECT * FROM produtos") or die("Erro");
 
 ?>
@@ -16,7 +16,7 @@ $sql = mysqli_query($conn,"SELECT * FROM produtos") or die("Erro");
         <div class="row">
     <?php
     // laco de repeticao 
-    while( $dados = mysqli_fetch_assoc($sql)) {
+    while($dados = mysqli_fetch_assoc($sql)) {
     ?>
         <div class="card col-3" style="width: 18rem;">
             <a href="./produto-detalhe.php?id=<?php echo $dados['ProdutoID'];?>">
